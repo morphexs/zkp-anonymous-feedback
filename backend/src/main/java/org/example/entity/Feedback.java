@@ -1,13 +1,19 @@
 package org.example.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.Instant;
 import java.util.UUID;
 
+@Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "anonymous_feedback")
 public class Feedback {
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -17,14 +23,4 @@ public class Feedback {
 
     @Column(nullable = false, updatable = false)
     private Instant submittedAt;
-
-    // Constructors
-    public Feedback() {}
-
-    // Getters and Setters
-    public UUID getId() { return id; }
-    public String getText() { return text; }
-    public void setText(String text) { this. text = text; }
-    public Instant getSubmittedAt() { return submittedAt; }
-    public void setSubmittedAt(Instant submittedAt) { this.submittedAt = submittedAt; }
 }
