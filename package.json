@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "express": "^5.2.1",
+    "snarkjs": "^0.7.6"
+  }
+}
